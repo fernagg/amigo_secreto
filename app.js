@@ -12,6 +12,18 @@ function agregarAmigo() {
     }else{
         listaAmigos.push(nombreAmigo);
         actualizarLista();
-        input.value = "";
+        nombreIngresado.value = "";
     }
+}
+
+//Funcion que muestra la lista de los amigos ingresados
+function actualizarLista() {
+    const lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+
+    listaAmigos.forEach((amigo) => {
+        const li = document.createElement("li");
+        li.textContent = amigo;
+        lista.appendChild(li);
+    });
 }
