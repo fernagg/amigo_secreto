@@ -27,3 +27,16 @@ function actualizarLista() {
         lista.appendChild(li);
     });
 }
+
+function sortearAmigo() {
+    if (listaAmigos.length == 0) {
+        alert("Debes ingresar los nombres para sortear.");
+        return;
+    }
+    else{
+        const sorteo = Math.floor(Math.random() * listaAmigos.length);
+        const amigoSecreto = listaAmigos[sorteo];
+        const resultado = document.getElementById("resultado");
+        resultado.innerHTML = `<li>👑 El amigo secreto es ${amigoSecreto} 👑</li>`;
+    }
+}
